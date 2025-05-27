@@ -1,0 +1,254 @@
+/* ========== Body Styles ========== */
+/* Applies background image and fallback color */
+  /* ========== Global Font ========== */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #e6f2ff;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2vw;
+}
+
+  /* ========== Reset Styles ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* ========== ID Selector ========== */
+  /* Styling the main banner/header */
+  #mainHeader {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* ========== Element Selector ========== */
+  /* Styling all h2 elements */
+  h2 {
+    color: #333;
+    font-size: 24px;
+    margin: 20px 0;
+  }
+  
+  /* ========== Class Selector ========== */
+  /* Styling individual event cards */
+  .eventCard {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 8px;
+  }
+  
+  
+  /* ========== Grouping Selector ========== */
+  /* Common styles for event titles and descriptions */
+  h3, p {
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 10px;
+  }
+  h3 {
+    color: #1a1a1a;
+  }
+  
+
+/* ========== Body Background ========== */
+/* Background image with fallback color */
+body {
+    background-color: #e6f2ff; /* Fallback color */
+    background-image: url('background.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+    
+  /* ========== Gradient Header ========== */
+.sectionHeader {
+    background: linear-gradient(to right, #ff6600, #ffcc00);
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  /* ========== Paragraph Text Styling ========== */
+p {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: justify;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    color: #444;
+  }
+/* ========== Header Typography ========== */
+h1, h2, h3 {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+    
+  /* ========== Link Styling ========== */
+a:link {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: #6c757d;
+  }
+  
+  a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: #ff6600;
+  }
+/* ========== Navigation List Styling ========== */
+.navMenu {
+    list-style-type: none;       /* Remove bullets */
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    gap: 20px;                   /* Space between links */
+  }
+  
+  .navMenu li {
+    display: inline;
+  }
+/* ========== Info List Styling ========== */
+.infoList {
+    list-style-type: disc;         /* You can use circle, square, etc. */
+    list-style-position: inside;   /* Moves bullet inside the content box */
+    padding-left: 10px;
+    margin-top: 15px;
+  }
+  
+  .infoList li {
+    padding: 5px 0;
+    margin-left: 10px;
+  }
+      /* ========== Table Styling ========== */
+.eventTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .eventTable th, .eventTable td {
+    border: 1px solid #ccc;
+    padding: 12px 15px;
+    text-align: center;
+  }
+  
+  .eventTable thead {
+    background-color: #ff6600;
+    color: white;
+  }
+  
+  .eventTable tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping */
+  }
+  /* ========== Event Card Box Model ========== */
+.eventCard {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #007BFF;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    outline: none;
+  }
+  .eventCard {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+  /* ========== Form Field Outline ========== */
+.selectedInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    outline: 2px solid #ff6600;
+    margin-top: 20px;
+    width: 300px;
+  }
+  /* ========== Visibility Examples ========== */
+.hiddenText {
+    visibility: hidden;  /* Hides element but keeps its space */
+  }
+  
+  .goneText {
+    display: none;       /* Removes element from layout */
+  }
+  /* ========== Multi-Column Layout ========== */
+.multiColumnText {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid gray;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  .newsArticle {
+    background-color: #ffffffcc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 20px 0;
+  }
+    /* ========== Responsive Design ========== */
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+
+  /* Stack navigation vertically */
+  .navMenu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* Make event cards full width */
+  .eventCard {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* Reduce font sizes */
+  body, p, h1, h2, h3 {
+    font-size: 90%;
+  }
+
+  /* Make table more scrollable */
+  .eventTable {
+    font-size: 14px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Adjust image or container sizes */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .multiColumnText {
+    column-count: 1;
+  }
+}
+/* Flexbox Layout */
+.eventRow {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}

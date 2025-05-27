@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community Event Portal</title>
+</head>
+<body>
+  <h1>Welcome to the Community Event Portal</h1>
+    <div id="eventList"></div>
+    <input type="text" id="searchBox" placeholder="Search events...">
+<select id="categoryFilter">
+  <option value="">All</option>
+  <option value="Music">Music</option>
+</select>
+<button onclick="registerUser('Cleanup Drive')">Register</button>
+    <form id="registerForm">
+  <input name="name" placeholder="Your name" required />
+  <input name="email" type="email" required />
+  <select name="event">
+    <option value="Cleanup Drive">Cleanup Drive</option>
+  </select>
+  <button type="submit">Submit</button>
+</form>
+<div id="errors"></div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script src="main.js"></script>
+</body>
+</html>

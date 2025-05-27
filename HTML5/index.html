@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community Event Portal</title>
+  <style>
+    /* Navigation Styling */
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: darkblue;
+      font-weight: bold;
+    }
+
+    /* ID Styling: Welcome Banner */
+    #welcomeBanner {
+      background-color: #cce5ff;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    /* Class Styling: Highlights and Gallery */
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+      padding: 2px 4px;
+    }
+
+    .gallery-img {
+      border: 3px solid #555;
+      width: 150px;
+      height: 100px;
+    }
+
+    table {
+      margin-top: 20px;
+      border-spacing: 15px;
+    }
+
+    caption {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    form {
+    margin-top: 50px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    width: 400px;
+    background-color: #eef5f9;
+    border-radius: 8px;
+    }
+
+    form input, form select, form textarea {
+    width: 100%;
+   padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    }
+
+    form button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    form button:hover {
+    background-color: #004d99;
+    }
+
+    output {
+    display: block;
+     margin-top: 15px;
+    color: green;
+    font-weight: bold;
+    }
+    #feedbackForm {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #eef5f9;
+  border-radius: 8px;
+  width: 350px;
+}
+
+#feedbackImage {
+  width: 150px;
+  height: 100px;
+  cursor: zoom-in;
+  margin-top: 10px;
+}
+
+#videoInvite {
+  margin-top: 30px;
+  background-color: #f0fff0;
+  padding: 15px;
+  border-radius: 10px;
+  width: fit-content;
+}
+button {
+  background-color: #337ab7;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #23527c;
+}
+#locationFinder {
+  margin-top: 30px;
+  background-color: #fdf7f0;
+  padding: 15px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+    <a href="help.html" target="_blank">Help</a>
+  </nav>
+
+  <!-- Main -->
+  <main>
+    <section id="home">
+      <!-- Welcome Banner -->
+      <div id="welcomeBanner">
+        <h1>Welcome to the Community Event Portal</h1>
+        <p>
+          Enjoy your visit! Today's <span style="color: red; font-weight: bold;">Special Offer</span>:
+          Get 20% off on all event passes!
+        </p>
+        <p class="highlight">Early bird discounts end soon. Book now!</p>
+      </div>
+
+      <p>This portal helps you <span class="highlight">discover</span> and register for local events!</p>
+    </section>
+
+    <section id="events">
+        <h2>Upcoming Events</h2>
+        <p>See what’s happening in your neighborhood.</p>
+      
+        <!-- Event Gallery Table -->
+        <table>
+          <caption>Highlights from Past Community Events</caption>
+          <tr>
+            <td><img src="images/event1.jpg" alt="Music Fest" title="Music Fest 2024" class="gallery-img"></td>
+            <td><img src="images/event2.jpg" alt="Art Exhibition" title="City Art Exhibition" class="gallery-img"></td>
+            <td><img src="images/event3.jpg" alt="Food Carnival" title="Tasty Food Carnival" class="gallery-img"></td>
+          </tr>
+          <tr>
+            <td><img src="images/event4.jpg" alt="Charity Run" title="Annual Charity Run" class="gallery-img"></td>
+            <td><img src="images/event5.jpg" alt="Book Fair" title="Citywide Book Fair" class="gallery-img"></td>
+            <td><img src="images/event6.jpg" alt="Cultural Dance" title="Cultural Dance Night" class="gallery-img"></td>
+          </tr>
+        </table>
+      
+        <!-- Event Registration Form -->
+        <h3>Register for an Event</h3>
+        <form id="registrationForm" onsubmit="handleSubmit(event)">
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name" placeholder="Your full name" required autofocus><br><br>
+      
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required><br><br>
+      
+          <label for="eventDate">Event Date:</label><br>
+          <input type="date" id="eventDate" name="eventDate" required><br><br>
+      
+          <label for="eventType">Event Type:</label><br>
+          <select id="eventType" name="eventType" required onchange="savePreference()">
+            <option value="">--Select an event--</option>
+            <option value="music">Music Concert</option>
+            <option value="art">Art Show</option>
+            <option value="tech">Tech Meetup</option>
+          </select><br><br>
+      
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="4" cols="40" placeholder="Any special requirements?"></textarea><br><br>
+      
+          <button type="submit">Submit</button>
+          <output id="confirmation"></output>
+          <button onclick="clearPreferences()" style="margin-top: 10px;">Clear Preferences</button>
+        </form>
+        
+
+      </section>
+      <h3>Event Feedback</h3>
+
+<form id="feedbackForm">
+  <label for="phone">Phone Number:</label><br>
+  <input type="text" id="phone" placeholder="10-digit number" onblur="validatePhone()" required><br><br>
+
+  <label for="feeSelect">Choose an Event:</label><br>
+  <select id="feeSelect" onchange="displayFee()">
+    <option value="">-- Select Event --</option>
+    <option value="music">Music Concert - ₹500</option>
+    <option value="art">Art Show - ₹300</option>
+    <option value="tech">Tech Meetup - ₹400</option>
+  </select><br>
+  <p id="feeDisplay" style="color: blue;"></p><br>
+
+  <label for="feedback">Your Feedback:</label><br>
+  <textarea id="feedback" rows="4" cols="40" placeholder="Share your experience..." onkeyup="countCharacters()"></textarea><br>
+  <p><span id="charCount">0</span> characters typed</p><br>
+
+  <button type="button" onclick="confirmFeedback()">Submit Feedback</button>
+</form>
+
+<!-- Image to double-click -->
+<p>Double-click to zoom:</p>
+<img src="images/event1.jpg" id="feedbackImage" class="gallery-img" ondblclick="enlargeImage()" alt="Feedback Image" title="Click to Enlarge">
+
+<section id="videoInvite">
+    <h3>You're Invited!</h3>
+    <video id="promoVideo" width="400" controls oncanplay="videoReady()">
+      <source src="videos/community-event.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p id="videoStatus" style="color: green; font-weight: bold;"></p>
+  </section>
+  
+  <section id="locationFinder">
+    <h3>Find Nearby Events</h3>
+    <button onclick="findLocation()">Find Nearby Events</button>
+    <p id="locationResult" style="margin-top: 10px; color: green;"></p>
+    <p id="locationError" style="color: red;"></p>
+  </section>
+  
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email us at events@localcouncil.gov</p>
+    </section>
+    
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Local City Council</p>
+  </footer>
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Stop actual form submission
+      const name = document.getElementById("name").value;
+      const eventType = document.getElementById("eventType").value;
+      const confirmation = document.getElementById("confirmation");
+  
+      confirmation.textContent = `Thank you, ${name}! You’ve registered for the ${eventType} event.`;
+    }
+  </script>
+  <script>
+    function validatePhone() {
+      const phone = document.getElementById("phone").value;
+      const phoneField = document.getElementById("phone");
+      const isValid = /^[0-9]{10}$/.test(phone);
+  
+      if (!isValid) {
+        alert("Please enter a valid 10-digit phone number.");
+        phoneField.focus();
+      }
+    }
+  
+    function displayFee() {
+      const select = document.getElementById("feeSelect");
+      const feeDisplay = document.getElementById("feeDisplay");
+  
+      const fees = {
+        music: "₹500",
+        art: "₹300",
+        tech: "₹400"
+      };
+  
+      const selected = select.value;
+      feeDisplay.textContent = selected ? `Event Fee: ${fees[selected]}` : '';
+    }
+  
+    function countCharacters() {
+      const feedback = document.getElementById("feedback").value;
+      document.getElementById("charCount").textContent = feedback.length;
+    }
+  
+    function confirmFeedback() {
+      alert("Thank you for your feedback!");
+    }
+  
+    function enlargeImage() {
+      const img = document.getElementById("feedbackImage");
+      if (img.style.transform === "scale(1.5)") {
+        img.style.transform = "scale(1)";
+      } else {
+        img.style.transform = "scale(1.5)";
+      }
+      img.style.transition = "transform 0.3s ease";
+    }
+  </script>
+  <script>
+    // Task 6 functions would already be here...
+  
+    function videoReady() {
+      document.getElementById("videoStatus").textContent = "🎥 Video ready to play!";
+    }
+  
+    // Warn user before leaving the page without submitting form
+    let formSubmitted = false;
+  
+    // Update this function to set the flag when form is submitted
+    function handleSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const eventType = document.getElementById("eventType").value;
+      const confirmation = document.getElementById("confirmation");
+      confirmation.textContent = `Thank you, ${name}! You’ve registered for the ${eventType} event.`;
+      formSubmitted = true;
+    }
+  
+    window.onbeforeunload = function (e) {
+      if (!formSubmitted) {
+        e.preventDefault();
+        e.returnValue = "You have unsaved changes. Are you sure you want to leave?";
+      }
+    };
+  </script>
+  <script>
+    // Save the selected event type
+    function savePreference() {
+      const selectedEvent = document.getElementById("eventType").value;
+      localStorage.setItem("preferredEvent", selectedEvent);
+      sessionStorage.setItem("tempEvent", selectedEvent); // optional
+    }
+  
+    // Load the saved preference on page load
+    window.onload = function () {
+      const savedEvent = localStorage.getItem("preferredEvent");
+      if (savedEvent) {
+        document.getElementById("eventType").value = savedEvent;
+      }
+    };
+  
+    // Clear preferences
+    function clearPreferences() {
+      localStorage.removeItem("preferredEvent");
+      sessionStorage.clear();
+      document.getElementById("eventType").value = "";
+      alert("Preferences cleared!");
+    }
+  </script>
+  <script>
+    function findLocation() {
+      const result = document.getElementById("locationResult");
+      const errorDisplay = document.getElementById("locationError");
+  
+      result.textContent = "";
+      errorDisplay.textContent = "";
+  
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const lat = position.coords.latitude;
+            const long = position.coords.longitude;
+            result.textContent = `Your Location: Latitude ${lat.toFixed(5)}, Longitude ${long.toFixed(5)}`;
+          },
+          (error) => {
+            switch (error.code) {
+              case error.PERMISSION_DENIED:
+                errorDisplay.textContent = "Permission denied. Please allow location access.";
+                break;
+              case error.POSITION_UNAVAILABLE:
+                errorDisplay.textContent = "Location information is unavailable.";
+                break;
+              case error.TIMEOUT:
+                errorDisplay.textContent = "Location request timed out.";
+                break;
+              default:
+                errorDisplay.textContent = "An unknown error occurred.";
+            }
+          },
+          {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+          }
+        );
+      } else {
+        errorDisplay.textContent = "Geolocation is not supported by this browser.";
+      }
+    }
+  </script>
+  
+  
+</body>
+</html>
